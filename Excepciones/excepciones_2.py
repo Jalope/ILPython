@@ -7,4 +7,3 @@ try:
 except Exception as x:
 	print(type(x).__name__)
 	print("Por lo que sea eres un poco tonto")
-
