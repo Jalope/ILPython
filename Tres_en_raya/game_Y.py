@@ -233,7 +233,7 @@ class Board():
 class Player():
     def __init__(self, color):
         self.turno = 9
-        self.player_1_symbol = -1
+        self.player_1_symbol = -1 
         self.player_2_symbol = 1
         self.color = color
 
