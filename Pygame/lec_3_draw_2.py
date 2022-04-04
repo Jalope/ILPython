@@ -35,4 +35,6 @@ while True:
     for y in range(200,600, 200): 
         pygame.draw.line(screen, BLACK, (50,y), (850,y), 10)    
     ##--- 
+    
+
     pygame.display.flip()
