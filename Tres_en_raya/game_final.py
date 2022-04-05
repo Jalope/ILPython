@@ -55,9 +55,6 @@ def comprobar_diagonal(tablero, condicion):
     else: 
         return False
 
-#b1 = comprobar_diagonal(tablero1, 3)
-#b2 = comprobar_diagonal(tablero2, -3)
-#print(b1, b2)
 
 def jugada_P1(tablero): 
     fila = int(input("Introduce la fila que quieres marcar: "))
