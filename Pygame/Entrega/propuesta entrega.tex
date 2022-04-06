@@ -1,0 +1,90 @@
+\documentclass[12pt, a4paper]{article}
+	\usepackage[utf8]{inputenc}	
+	\usepackage[T1]{fontenc}
+	\usepackage[spanish,activeacute]{babel}
+	\usepackage{color}	
+	\usepackage{fancyhdr}	
+	\usepackage{lettrine}
+	\usepackage{setspace}
+	\usepackage{pdflscape}
+	\usepackage{mathtools}
+	\usepackage{ulem}
+	\usepackage{dsfont}	
+	\usepackage{multicol}
+	\usepackage{multirow}	
+	\usepackage{graphicx}
+	\usepackage{amsfonts}
+	\usepackage[table,xcdraw]{xcolor}
+	\usepackage{tikzsymbols}
+	\usepackage{pdfpages}
+	\usepackage{cancel}
+	\usepackage{amssymb}
+	\usepackage{amsthm}
+	\usepackage{tcolorbox}
+%------------------------------APROVECHAMIENTO DEL FOLIO-------------------------
+\usepackage{vmargin}
+	\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página        
+%---------------------------------------------------------------------------------
+%--------------------------------CREACION DE NUMERACIONES AUTOMÁTICAS---------------
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Lema}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}
+
+\theoremstyle{plain}
+\newtheorem{prop}{Proposición}
+%----------------------------------INICIAMOS EL DOCUMENTO--------------------------------        
+\begin{document}
+	\title{Propuesta para la práctica de programación concurrente}
+	\author{Daniel Saiz Bautista, Javier López Gismeros y Raúl Blanco Martín }
+	\date{abril 2022}
+	\maketitle
+%-------------------------------------COMANDOS DEFINIDOS POR MI-----------------------------
+	%\newcommand{\p}[0]{\mbox{PROP}_{SP}} %ejemplo de comando sin atributo
+	%\newcommand{\cts}[1]{\mbox{Cts}_{#1}} %ejemplo de comando con atributo
+%----------------------------------------------------------------------------------
+	%\tableofcontents
+	%\newpage
+%	\pagestyle{fancy}
+%        \setlength\headheight{23pt}
+%        \fancyhf{}
+%        \lhead{\bfseries} %Texto arriba izquierda
+%        \chead{} %Texto arriba centrado
+%        \rhead{} %Texto arriba derecha
+%        \lfoot{} %Texto abajo izquierda
+%        \cfoot{} %Texto abajo centrado
+%        \rfoot{\thepage} %Texto abajo derecha (el atributo pone automaticamente el número de página)
+%        \renewcommand{\headrulewidth}{0.1pt} %Tamaño de linea superior
+%        \renewcommand{\footrulewidth}{0.1pt} %Tamaño de linea inferior
+%----------------------TEXTO DEL DOCUMENTO------------
+\section*{Programa elegido}
+En nuestro grupo hemos tomado la decisión de utilizar la librería \texttt{pygame}. Debido a que el 
+juego requiere de concurrencia hemos descartado cualquier juego por turnos. Por ello, vamos 
+a implementar un juego de disparos entre dos naves. El jugador que primero alcance a su 
+rival ganaría la partida.
+
+\section*{Paralelismo}
+Dentro de la implementación usaremos la librería \texttt{multiprocessing} para poder encerrar 
+todas las acciones atómicas que puedan generar problemas. 
+
+\section*{Concurrencia}
+Implementaremos, como en el ejemplo que vimos en clase, un cliente/servidor de forma 
+que el juego pueda usarse bajo los principios de la programación concurrente, por dos jugadores en la misma red. Para ello utilizaremos, de nuevo, la librería \texttt{multiprocessing} en concreto de 
+Listener y Client. 
+
+Posteriormente, una vez alcanzado el objetivo de la práctica con cliente/servidor, intentaremos hacer uso de la tecnología mqtt. Para ello haremos uso de \texttt{paho.mqtt.publish} como se ha visto en clase. 
+
+
+\end{document}
